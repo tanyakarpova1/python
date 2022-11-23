@@ -35,7 +35,8 @@ b = ["1", "2", "3", "4", "5"]
 print(b)
 for spisok3 in b[::-1]:
     print(spisok3)
-
+    
+print ("Задание 7")
 n15 = int(input("Введите число: "))
 spisoc5=[]
 for u in range (2, n15+1):
