@@ -36,6 +36,15 @@ print(b)
 for spisok3 in b[::-1]:
     print(spisok3)
 
+n15 = int(input("Введите число: "))
+spisoc5=[]
+for u in range (2, n15+1):
+    for q3 in spisoc5:
+        if u % q3 == 0:
+            break
+    else:
+        spisoc5.append(u)
+print(spisoc5)
 
 
 
