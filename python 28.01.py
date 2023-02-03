@@ -32,3 +32,28 @@ if (c1==0 and d1==0 and e1==0):
     print("Условие истинно")
 else:
     print("Условие ложно")
+    
+print("Задание 2")
+t = int(input("Введите время начала разговора в часах: "))
+dt = int(input("Введите продолжительность разговора в минутах: "))
+d = int(input("Введите день недели от 1 до 7: "))
+s = int(input("Введите стоимость минуты разговора: "))
+skidka = 0
+skidka1 = 0
+r = dt*s
+print("Стоимость разговора: ")
+print(r)
+if (t >= 22 or t <= 8):
+    skidka = r / 5
+    r1 = r - skidka
+    print("Общая стоимость со скидкой на время:")
+    print(r1)
+if (d==6 or d==7):
+    skidka1 = r / 10
+    r2 = r - skidka1
+    print("Общая стоимость со скидкой за день недели: ")
+    print(r2)
+if (skidka > 0 and skidka1 > 0):
+    r = r - (skidka + skidka1)
+    print("Конечная стоимость: ")
+    print(r)
