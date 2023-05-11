@@ -1,35 +1,38 @@
-print ("Калькулятор");
-def calc (number1, number2, deistvie, result):
- if deistvie =='+':
-   result = number1 + number2;
-   print(result)
-   return result
-#Действие вычитания
- elif result =='-':
-    print (number1-number2)
-#Действие умножения
- elif result =='*':
-   print (number1*number2)
-#Действие деления
- elif result =='/':
-    print(number1 / number2)
+print(("Задание 1"))
+def fun1(str):
+    x = 0
+    for i in str:
+        x += 1
+    return x
+str = "word"
+print(fun1(str))
 
-print('Решение квадратного уравнения')
-print('ax^2+bx+c')
-a = int(input('Введите первый коэффициент: '))
-b = int(input('Введите второй коэффициент: '))
-c = int(input('Введите третий коэффициент: '))
-print('Находим дискриминант:')
-D = b**2-4*a*c
-print(D);
-if D < 0:
-    print('Корней нет')
-elif D ==0:
-    x = (-b)/(2*a)
-    print('Уравнение имеет один корень:')
-    print(x)
-elif D > 0:
-    x1 = (-b+D**0.5)/(2*a)
-    x2 = (-b-D**0.5)/(2*a)
-    print('Уравнение имеет два корня:')
-    print (x1, x2)
+print(("Задание 3"))
+x1 = int(input())
+y1 = int(input())
+x2 = int(input())
+y2 = int(input())
+if x1 == x2-1 and y1 == y2-1:
+    print("YES")
+else:
+    print("NO")
+
+print("Задание 4")
+c = [1,5,7]
+d = [3,2,4]
+a = []
+a.insert(0,c[0])
+a.insert(1,d[0])
+a.insert(2,c[1])
+a.insert(3,d[1])
+a.append(c[2])
+a.append(d[2])
+print(a)
+
+print("Задание 5")
+def calculation():
+    q = int(input())
+    w = int(input())
+    print(q+w)
+    print(q-w)
+print(calculation())
