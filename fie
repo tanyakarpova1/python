@@ -1,0 +1,720 @@
+Карпова Татьяна
+214 гр.
+
+04.02
+print("Задание 1")
+year = int(input("Введите год: "))
+print("0 - до н.э")
+print("1 - н.э")
+era = int(input("Введите эру от 0 до 1: "))
+if ((year > 45 and era == 0 )):
+    print("Год не вискосный")
+if (year%4 == 0 and year%100 !=0 or year%400 == 0):
+    print("Год високосный")
+else:
+    print("Год не високосный")
+
+print("Задание 2")
+a = int(input("Введите число от 1 до 99: "))
+if(a > 99 or a < 1):
+    print("Неверное число")
+elif (a == 1):
+    print(a)
+    print("копейка")
+elif (a%10 == 2 or a%10 == 3 or a%10 == 4):
+    print(a)
+    print("копейки")
+elif (a == 12 or a == 13 or a == 14 or a == 11):
+    print(a)
+    print("копеек")
+else:
+    print(a)
+    print("копеек")
+
+print("Задание 3")
+b = int(input("Введите день года:"))
+if (b < 1 or b > 365):
+    print("Неверное число")
+elif(b == 1):
+    print("Понедельник")
+elif(b%7 == 1):
+    print("Понедельник")
+elif(b%7 == 2):
+    print("Вторник")
+elif(b%7 == 3):
+    print("Среда")
+elif(b%7 == 4):
+    print("Четверг")
+elif(b%7 == 5):
+    print("Пятница")
+elif(b%7 == 6):
+    print("Суббота")
+elif(b%7 == 7):
+    print("Воскресенье")
+
+print("Задание 4")
+d = int(input("Введите день рождения"))
+n = int(input("Введите номер месяца рождения"))
+if ((d >= 21 and n == 3) or (d <= 20 and n == 4)):
+    print("Знак Зодиака - Овен")
+elif ((d >= 21 and n == 4) or ( d <= 20 and n == 5)):
+    print("Знак Зодиака - Телец")
+elif ((d >= 21 and n == 5) or ( d <= 21 and n == 6)):
+    print("Знак Зодиака - Близнецы")
+elif ((d >= 22 and n == 6) or ( d <= 22 and n == 7)):
+    print("Знак Зодиака - Рак")
+elif ((d >= 23 and n == 7) or ( d <= 23 and n == 8)):
+    print("Знак Зодиака - Лев")
+elif ((d >= 24 and n == 8) or ( d <= 23 and n == 9)):
+    print("Знак Зодиака - Дева")
+elif ((d >= 24 and n == 9) or ( d <= 23 and n == 10)):
+    print("Знак Зодиака - Весы")
+elif ((d >= 24 and n == 10) or ( d <= 22 and n == 11)):
+    print("Знак Зодиака - Скорпион")
+elif ((d >= 23 and n == 11) or ( d <= 21 and n == 12)):
+    print("Знак Зодиака - Стрелец")
+elif ((d >= 22 and n == 12) or ( d <= 20 and n == 1)):
+    print("Знак Зодиака - Козерог")
+elif ((d >= 21 and n == 1) or ( d <= 18 and n == 2)):
+    print("Знак Зодиака - Водолей")
+elif ((d >= 19 and n == 2) or ( d <= 20 and n == 3)):
+    print("Знак Зодиака - Рыбы")
+    
+  08.04
+  import requests
+
+url = requests.get('https://www.cbr-xml-daily.ru/daily_json.js').json()
+
+print(url['Valute']['USD']['Name'], end=' '), print(url['Valute']['EUR']['Value'])
+
+print (url['Valute']['EUR']['Name'], end=' '), print(url['Valute']['EUR']['Value'])
+
+print (url['Valute']['CNY']['Name'], end=' '), print(url['Valute']['CNY']['Value'])
+
+print (url['Valute']['JPY']['Name'], end=' '), print(url['Valute']['JPY']['Value'])
+
+print (url['Valute']['BYN']['Name'], end=' '), print(url['Valute']['BYN']['Value'])
+
+11.02
+from random import randint
+b = []
+a = 250
+for c in range(a):
+    b.append(randint(0,10000))
+print("Изначальный массив")
+print(b)
+for c in range(a-1):
+    for d in range(a-c-1):
+        if b[d+1] < b[d]:
+            b[d], b[d+1] = b[d+1], b[d]
+print("Отсортированный массив")
+print(b)
+
+18.02
+print("Задание 1")
+from random import randint
+a = []
+b = 10
+count = 0
+for c in range (b):
+    a.append(randint(-100, 100))
+print("Последовательность")
+print(a)
+for i in range(len(a) - 1):
+    if (a[i] > 0 and a[i + 1] < 0) or (a[i] < 0 and a[i + 1] > 0):
+        count += 1
+print(count)
+
+print ("Задание 3")
+a1 = []
+b1 = 10
+for c1 in range (b1):
+    a1.append(randint(-10, 10))
+print("Последовательность")
+print(a1)
+if len(set(a1)) == len(a1):
+    print("Все элементы уникальны")
+else:
+    print("Есть одинаковые элементы")
+
+print("Задание 2")
+from random import randint
+a1 = []
+b1 = 10
+neotr = 0
+otr = 0
+sum1 = 0
+sum2 = 0
+for c1 in range (b1):
+    a1.append(randint(-999, 1000))
+print("Последовательность")
+print(a1)
+for i1 in range(len(a1)):
+    if a1[i1] > 0:
+        neotr = neotr + 1
+        sum1 = sum1 + a1[i1]
+    if a1[i1] < 0:
+        otr = otr + 1
+        sum2 = sum2 + a1[i1]
+k1 = sum1 / neotr
+k2 = sum2 / otr
+print(k1)
+print(k2)
+
+05.10
+from random import randint
+spisok1 = [randint(1,10000) for i in range (15)]
+print ('Случайные пололожительные числа:')
+print (spisok1)
+print ('Сумма чисел:')
+print (sum(spisok1))
+spisok2 = [randint(-10000,-1) for i in range (15)]
+print ('Случайные отрицательные числа:')
+print (spisok2)
+print ('Сумма чисел:')
+print (sum(spisok2))
+
+16.11
+print ("Задание 1")
+from random import randint
+spisok1 = [randint(1,100) for i in range(15)]
+print(spisok1)
+spisok2 = [randint(1,100) for i in range(15)]
+print(spisok2)
+for a in spisok1:
+    if a % 2 == 1:
+        print("Нечетные числа: ")
+        print(a)
+for b in spisok2:
+    if b % 2 == 0:
+        print("Четные числа: ")
+        print(b)
+
+print("Задание 2")
+for a in range(1,11):
+    print(''.join(str(a*b) for b in range(1,11)))
+
+print("Задание 4")
+with open("Z:/text1.txt", "r") as f:
+    text = f.readline(4)
+    print(text)
+
+print("Задание 5")
+a = int(input('Введите число = '))
+summ = 0
+for i in range(1,a+1):
+    summ =i+summ
+print('Сумма чисел от 1')
+print(summ)
+
+print("Задание 6")
+b = ["1", "2", "3", "4", "5"]
+print(b)
+for spisok3 in b[::-1]:
+    print(spisok3)
+    
+print ("Задание 7")
+n15 = int(input("Введите число: "))
+spisoc5=[]
+for u in range (2, n15+1):
+    for q3 in spisoc5:
+        if u % q3 == 0:
+            break
+    else:
+        spisoc5.append(u)
+print(spisoc5)
+
+28.09
+print ("Калькулятор");
+number1 = int(input('Введите первое число: '));
+number2 = int(input('Введите второе число: '));
+result = input('Выберите действие: +, -, /, * ' );
+#Действие сложения
+if result =='+':
+   print (number1+number2);
+#Действие вычитания
+elif result =='-':
+    print (number1-number2)
+#Действие умножения
+elif result =='*':
+   print (number1*number2)
+#Действие деления
+elif result =='/':
+    print(number1 / number2)
+
+print('Решение квадратного уравнения')
+print('ax^2+bx+c')
+a = int(input('Введите первый коэффициент: '))
+b = int(input('Введите второй коэффициент: '))
+c = int(input('Введите третий коэффициент: '))
+print('Находим дискриминант:')
+D = b**2-4*a*c
+print(D);
+if D < 0:
+    print('Корней нет')
+elif D ==0:
+    x = (-b)/(2*a)
+    print('Уравнение имеет один корень:')
+    print(x)
+elif D > 0:
+    x1 = (-b+D**0.5)/(2*a)
+    x2 = (-b-D**0.5)/(2*a)
+    print('Уравнение имеет два корня:')
+    print (x1, x2)
+
+12.10
+while True:
+    number1 = int(input('Введите первое число: '));
+    number2 = int(input('Введите второе число: '));
+    result = input('Выберите действие: +, -, /, * ');
+    if result == '+':
+        number3 = number1 + number2;
+        print(number3)
+        break
+    elif result == '-':
+        number3 = number1 - number2;
+        print(number3)
+        break
+    elif result == '*':
+        number3 = number1 * number2;
+        print(number3)
+        break
+    elif result == '/':
+        number3 = number1 / number2;
+        print(number3)
+        break
+    else:
+        print("Неверно выбрано действие")
+        break
+
+print('Решение квадратного уравнения')
+print('ax^2+bx+c')
+a = int(input('Введите первый коэффициент: '))
+b = int(input('Введите второй коэффициент: '))
+c = int(input('Введите третий коэффициент: '))
+print('Находим дискриминант:')
+D = b**2-4*a*c
+if D < 0:
+    print('Корней нет')
+elif D ==0:
+    x = (-b)/(2*a)
+    print('Уравнение имеет один корень:')
+    print(x)
+elif D > 0:
+    x1 = (-b+D**0.5)/(2*a)
+    x2 = (-b-D**0.5)/(2*a)
+    print('Уравнение имеет положительный дискриминант и два корня:')
+    spisok = [D, x1, x2]
+    print (spisok)
+
+11.05
+print(("Задание 1"))
+def fun1(str):
+    x = 0
+    for i in str:
+        x += 1
+    return x
+str = "word"
+print(fun1(str))
+
+print(("Задание 3"))
+x1 = int(input())
+y1 = int(input())
+x2 = int(input())
+y2 = int(input())
+if x1 == x2-1 and y1 == y2-1:
+    print("YES")
+else:
+    print("NO")
+
+print("Задание 4")
+c = [1,5,7]
+d = [3,2,4]
+a = []
+a.insert(0,c[0])
+a.insert(1,d[0])
+a.insert(2,c[1])
+a.insert(3,d[1])
+a.append(c[2])
+a.append(d[2])
+print(a)
+
+print("Задание 5")
+def calculation():
+    q = int(input())
+    w = int(input())
+    print(q+w)
+    print(q-w)
+print(calculation())
+
+24.12
+import requests
+import datetime
+from config import tg_bot_token, open_weather_token
+from aiogram import Bot, types
+from aiogram.dispatcher import Dispatcher
+from aiogram.utils import executor
+from pyowm import OWM
+from pyowm.utils.config import get_default_config
+
+
+bot = Bot(token='5948642193:AAHz4mb_AG9xPX9jYlajWEwcZYiPkXEbB5g')
+dp = Dispatcher(bot)
+
+@dp.message_handler(commands=["start"])
+async def start_command(message: types.Message):
+    await message.reply("Привет! Напиши название города и я пришлю прогноз погоды")
+
+
+@dp.message_handler()
+async def get_weather(message: types.Message):
+    config_dict = get_default_config()
+    config_dict['language'] = 'ru'
+    owm = OWM('c1afae166690c0e89087d73758e4ef27')
+    mgr = owm.weather_manager()
+    observation = mgr.weather_at_place(message.text)
+    w = observation.weather
+    state = w.detailed_status
+    w.wind()
+    humidity = w.humidity
+    temperature = w.temperature('celsius')['temp']
+
+    def weather():
+        print("В городе " + str(message.text) + " сегодня " + str(state) +
+              "\nТемпература " + str(
+            round(temperature)) + " градусов по цельсию" +
+              "\nВлажность составляет " + str(humidity) + "%" +
+              "\nСкорость ветра " + str(w.wind()['speed']) + " метров в секунду")
+
+    weather()
+
+    await message.reply("В городе " + str(message.text) + " сегодня " + str(state) +
+              "\nТемпература " + str(
+            round(temperature)) + " градусов по цельсию" +
+              "\nВлажность составляет " + str(humidity) + "%" +
+              "\nСкорость ветра " + str(w.wind()['speed']) + " метров в секунду")
+
+    if (temperature < -10):
+        await message.reply("Рекомендация по одежде: Свитер; зимняя шапка; зимняя куртка с капющоном; перчатки; утепленные штаны; шарф")
+    elif (temperature < 0 and temperature > -10):
+        await message.reply("Рекомендация по одежде: Зимняя куртка, зимняя шапка, шарф, утепленные штаны")
+    elif (temperature > 0 and temperature < 5):
+        await message.reply("Рекормендация по одежде: Дубленка или пуховик; осенние ботинки или кроссовки; джинсы; осенняя шапка и шарф")
+    elif (temperature > 5 and temperature < 10):
+        await message.reply("Рекомендация по одежде: Джинсы или брюки, осенние ботинки, сапоги или кроссовки; куртка")
+    elif (temperature > 10 and temperature < 15):
+        await message.reply("Рекомендация по одежде: Брюки или спортивные штаны, джинсы; ветровка или толстовка; кроссовки")
+    elif (temperature > 15 and temperature < 20):
+        await message.reply("Рекомендация по одежде: Футболка; легкая куртка; кроссовки;Брюки или спортивные штаны, джинсы ")
+    elif (temperature > 20):
+        await message.reply("Рекомендация по одежде: Легкие штаны или шорты, футболка; летние кроссовки, сандалии или босоножки")
+
+
+if __name__ == "__main__":
+    executor.start_polling(dp)
+   
+10.03
+print("Задание 1")
+n = int(input())
+a = []
+for m in range(n):
+    a.append([0]*n)
+for m in range(n):
+    for q in range(n):
+        if m + q == n - 1:
+            a[m][q] = 1
+        elif m + q > n - 1:
+            a[m][q] = 2
+for row in a:
+    for elem in row:
+        print(elem, end = ' ')
+    print()
+
+print("Задание 2")
+n1 = int(input("Введите нечетное число: "))
+a1 = []
+for m1 in range(n1):
+    a1.append(['.']*n1)
+for m1 in range(n1):
+    for q1 in range(n1):
+        if m1 + q1 == n1 - 1:
+            a1[m1][q1] = '*'
+        elif m1 == q1:
+            a1[m1][q1] = '*'
+        elif m1 == n1 // 2:
+            a1[m1][q1] = '*'
+        elif q1 == n1 // 2:
+            a1[m1][q1] = '*'
+for row in a1:
+    for elem in row:
+        print(elem, end = ' ')
+    print()
+
+print("Задание 3")
+n2 = int(input())
+a2 = []
+for m2 in range(n):
+    a2.append([1]*n2)
+for m2 in range(n2):
+    for q2 in range(n2):
+        if m2 == q2:
+            a2[m2][q2] = 0
+        elif m2 > q2:
+            a2[m2][q2] = m2 - q2
+        elif q2 > m2:
+            a2[m2][q2] = q2 - m2
+for row in a2:
+    for elem in row:
+        print(elem, end = ' ')
+    print()
+    
+ 12.10
+ x1 = int(input('Введите первое число: '));
+x2 = int(input('Введите второе число: '));
+x3 = int(input('Введите третье число: '));
+a = [x1,x2,x3]
+print('Минимальное число: ')
+print (min(a))
+
+a = int(input('Введите число: '));
+k = len(str(a))
+print('Количество цифр в числе: ')
+print (k)
+
+b = int(input('Введите число: '));
+sum = 0
+for i in range (1, b + 1):
+    sum = i + sum;
+print('Сумма равна: ')
+print (sum)
+
+c = int(input('Введите число: '));
+factorial = 1
+for e in range (1, c + 1):
+    factorial = e * factorial;
+print('Факториал равен: ')
+print (factorial)
+
+28.01
+print("Задание 1")
+
+x1 = int(input("Введите X: "))
+y1 = int(input("Введите Y: "))
+if ((y1 <= 1) or (y1 >= 1) and (x1 <=1 ) or (x1 >=1 )):
+    print("Точка попадает в заштрихованную область")
+else:
+    print("Точка не попадает в заштрихованную область")
+
+print("Задание 3a")
+a = int(input("Введите a: "))
+b = int(input("Введите b: "))
+c = a%2
+if (c==0):
+    print("Число a-четное")
+d = b%2
+if (d==0):
+    print("Число b-четное")
+if ((c==0 or d==0) and c !=d):
+    print("Условие истинно")
+else:
+    print("Условие ложно")
+
+print("Задание 3a")
+a1 = int(input("Введите a1: "))
+b1 = int(input("Введите b1: "))
+v1 = int(input("Введите v1: "))
+c1 = a1%3
+d1 = b1%3
+e1 = v1%3
+if (c1==0 and d1==0 and e1==0):
+    print("Условие истинно")
+else:
+    print("Условие ложно")
+    
+print("Задание 2")
+t = int(input("Введите время начала разговора в часах: "))
+dt = int(input("Введите продолжительность разговора в минутах: "))
+d = int(input("Введите день недели от 1 до 7: "))
+s = int(input("Введите стоимость минуты разговора: "))
+skidka = 0
+skidka1 = 0
+r = dt*s
+print("Стоимость разговора: ")
+print(r)
+if (t >= 22 or t <= 8):
+    skidka = r / 5
+    r1 = r - skidka
+    print("Общая стоимость со скидкой на время:")
+    print(r1)
+if (d==6 or d==7):
+    skidka1 = r / 10
+    r2 = r - skidka1
+    print("Общая стоимость со скидкой за день недели: ")
+    print(r2)
+if (skidka > 0 and skidka1 > 0):
+    r = r - (skidka + skidka1)
+    print("Конечная стоимость: ")
+    print(r)
+    
+21.09
+print ('______________________________________________________________________________________________________________________________________________________________________________________________________________');
+print ('______________________________________________________________________________________________________________________________________________________________________________________________________________');
+print ('______________________________________________________________________________________________________________________________________________________________________________________________________________');
+print ('_______                                                                                                                                                                                                _______');
+print ('_______         _________________________      _____            _____      ___________________________      _____            _____      ______________________      _________            _____         _______');
+print ('_______         _________________________       _____          _____       ___________________________      _____            _____      ______________________      __________           _____         _______');
+print ('_______         _____               _____        _____        _____                   _____                 _____            _____      _____            _____      _____ _____          _____         _______');
+print ('_______         _____               _____         _____      _____                    _____                 _____            _____      _____            _____      _____  _____         _____         _______');
+print ('_______         _____               _____          _____    _____                     _____                 _____            _____      _____            _____      _____   _____        _____         _______');
+print ('_______         _____               _____           _____  _____                      _____                 ______________________      _____            _____      _____    _____       _____         _______');
+print ('_______         _________________________            __________                       _____                 ______________________      _____            _____      _____     _____      _____         _______');
+print ('_______         _________________________             _______                         _____                 _____            _____      _____            _____      _____      _____     _____         _______');
+print ('_______         _____                                  _____                          _____                 _____            _____      _____            _____      _____       ______   _____         _______');
+print ('_______         _____                                  _____                          _____                 _____            _____      _____            _____      _____        ______  _____         _______');
+print ('_______         _____                                  _____                          _____                 _____            _____      _____            _____      _____         ______ _____         _______');
+print ('_______         _____                                  _____                          _____                 _____            _____      ______________________      _____          ___________         _______');
+print ('_______         _____                                  _____                          _____                 _____            _____      ______________________      _____           __________         _______');
+print ('_______                                                                                                                                                                                                _______');
+print ('______________________________________________________________________________________________________________________________________________________________________________________________________________');
+print ('______________________________________________________________________________________________________________________________________________________________________________________________________________');
+print ('______________________________________________________________________________________________________________________________________________________________________________________________________________');
+
+
+19.10
+print ('Задание 1')
+print ('a)(101 + 0)/3')
+a = 101
+b = 0
+c = 3
+d = (a+b)/3
+print (d)
+
+print ('b) 3.0e-6*10000000.1')
+e = 2.71
+x = (3.0*e) - (6*10000000.1)
+print (x)
+
+print ('c)true&&true')
+y = True and True
+print (y)
+
+print ('d)false&&false')
+x1 = False and False
+print(x1)
+
+print ('e)(false&&false)(true&&true)')
+x2 = False and False
+x3 = True and True
+x4 = x2 and x3
+print (x4)
+
+print ('f)(false false)&&(true&&true)')
+x5 = False and False
+x6 = True and False
+x7 = x5 and x6
+print (x7)
+
+print ('Задание 2')
+y1 = int(input('Введите целое число'))
+y2 = int(input('Введите целое число'))
+y3 = int(input('Введите целое число'))
+y4 = int(input('Введите целое число'))
+if y1 == y2 ==y3 ==y4:
+   print('Числа равны')
+else:
+    print ('Числа не равны')
+
+print ('Задание 3')
+y5 = int(input('Введите целое число'))
+y6 = int(input('Введите целое число'))
+y7 = int(input('Введите целое число'))
+y8 = int(input('Введите целое число'))
+a1 = [y5,y6,y7,y8]
+print ('Максимальное число:')
+print (max(a1))
+
+print ('Задание 4')
+y9 = int(input('Введите целое число'))
+y10 = int(input('Введите целое число'))
+y11 = int(input('Введите целое число'))
+y12 = int(input('Введите целое число'))
+a2 = [y9,y10,y11,y12]
+print ('Минимальное число:')
+print (min(a2))
+
+print ('Задание 5')
+n1 = int(input('Введите целое число'))
+n2 = int(input('Введите целое число'))
+n3 = int(input('Введите целое число'))
+n4 = int(input('Введите целое число'))
+a3 = [n1,n2,n3,n4]
+sr = (n1 + n2 + n3 + n4)/4
+print('Среднее значение чисел массива:')
+print (sr)
+print ('Числа, превышающее среднее значение чисел массива: ')
+if n1 > sr:
+    print (n1)
+if n2 > sr:
+    print (n2)
+if n3 > sr:
+    print (n3)
+if n4 > sr:
+    print (n4)
+
+print ('Задание 6')
+from functools import reduce
+from operator import mul
+k1 = int(input('Введите целое число'))
+k2 = int(input('Введите целое число'))
+a4 =[k1,k2]
+k3 = reduce(mul,a4)
+print ('Результат умножения: ')
+print (k3)
+
+print ('Задание 9')
+t1 = int(input('Введите свой рост в см: '))
+t2 = int(input('Введите свой вес: '))
+t1 = t1/100
+imt = t2/t1**2
+print ('Ваш индекс массы тела')
+print (imt)
+if imt <18.5:
+    print ('Ваш вес ниже нормального ')
+elif imt <=25:
+    print ('Ваш вес в норме')
+elif imt <=30:
+    print ('Избыточный вес')
+elif imt <=35:
+    print('Ожирение первой степени')
+elif imt <=40:
+    print('Ожирение второй степени')
+elif imt >40:
+    print('Ожирение третьей степени')
+
+print ('Задание 10')
+ch = int(input('Введите число'))
+kvadrat = ch*ch
+kub =ch*ch*ch
+chetvertaya = ch*ch*ch*ch
+print('Квадрат числа: ')
+print(kvadrat)
+print('Куб числа: ')
+print(kub)
+print('Четвертая степень: ')
+print(chetvertaya)
+
+print ('Задание 11')
+st1 = int(input('Введите длину первой стороны треугольника'))
+st2 = int(input('Введите длину второй стороны треугольника'))
+st3 = int(input('Введите длину третьей стороны треугольника'))
+if st1 + st2 > st3 and st1 + st3 > st2 and st2 + st3 > st1:
+    print('Данные стороны образуют треугольник')
+else:
+    print('Данные стороны не образуют треугольник')
+
+
+
+
+
+
+
